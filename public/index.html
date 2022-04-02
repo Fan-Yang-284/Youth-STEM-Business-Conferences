@@ -1,0 +1,349 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://kit.fontawesome.com/fa0e1fe1ec.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="YSBCLogo.png">
+    <link rel="stylesheet" href="onscroll.css">
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js"></script>
+    <title>YSBC - Home</title>
+
+    <style>
+        .gradient {
+          background: linear-gradient(90deg, #36c8ed 0%, #3dd9d6 100%);
+        }
+    
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.10);
+        }
+
+        .text-shadow-md {
+            text-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .text-shadow-lg {
+            text-shadow: 0 10px 20px rgba(0,0,0,0.11), 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .text-shadow-none {
+            text-shadow: none;
+        }
+        
+    </style>
+</head>
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+    <!--Nav-->
+    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+          <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="index.html">
+            <img class="h-12 fill-current inline" src="YSBCLogo.png" alt="YSBC Logo">
+            Youth STEM Business Conferences
+          </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+          <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+          <ul class="list-reset lg:flex justify-end flex-1 items-center">
+            <li class="mr-3">
+              <a class="inline-block py-2 px-4 text-black font-bold no-underline transform transition hover:scale-105 duration-300 ease-in-out" href=".">Home</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4 transform transition hover:scale-105 duration-300 ease-in-out" href="about-us.html">About Us</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4 transform transition hover:scale-105 duration-300 ease-in-out" href="our-events.html">Our Events</a>
+            </li>
+            <li class="mr-3">
+                <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4 transform transition hover:scale-105 duration-300 ease-in-out" href="our-partners.html">Our Partners</a>
+              </li>
+          </ul>
+          <a id="navAction" target="_blank" href="https://www.eventbrite.ca/e/ysbc-business-and-technology-conference-tickets-280235500927" class="mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            Register!
+          </a>
+        </div>
+      </div>
+      <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+    </nav>
+    <!--Hero-->
+    <div class="pt-24">
+      <div class="container px-8 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <!--Left Col-->
+        <div class="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left">
+          <p class="font-bold uppercase tracking-loose w-full text-shadow-md">Inspiring our Youth</p>
+          <h1 class="my-4 text-5xl font-bold leading-tight text-shadow-lg">
+            Connecting Professionals with Aspiring Students
+          </h1>
+          <p class="leading-normal text-2xl mb-8 text-shadow">
+            Our mission is to reflect the fundamentals of STEM: research, exploration and growth. Through our conferences, we aim to make pathways in STEM approachable to all. 
+          </p>
+          <button class="z-20 mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            <a href = "our-events.html">Learn more</a>
+          </button>
+        </div>
+        <!--Right Col-->
+        <div class="w-full align-right md:w-2/5 py-8 text-center transform transition hover:scale-105 duration-300 ease-in-out">
+          <a href="https://ca.linkedin.com/in/julien-liang-83670121b"><img class="w-full md:w-4/5 z-50" src="#"/></a>
+        </div>
+      </div>
+    </div>
+    <div class="relative -mt-12 lg:-mt-24">
+      <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+            <path
+              d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+              opacity="0.100000001"
+            ></path>
+            <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4" opacity="0.200000003"></path>
+          </g>
+          <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path
+              d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"
+            ></path>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <section class="bg-white border-b py-8">
+      <div class="container max-w-5xl mx-auto reveal m-8">
+        <h1 class="w-full my-2 text-8xl font-bold leading-tight text-center text-gray-800">
+          March 26th
+        </h1>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="flex flex-wrap">
+            <div class="w-5/6 sm:w-1/2 p-6">
+                <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                Learn from Experts
+                </h3>
+                <p class="text-gray-600 mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                <br />
+                <br />
+
+                Images from:
+
+                <a class="text-pink-500 underline" href="https://undraw.co/">undraw.co</a>
+                </p>
+            </div>
+            <div class="w-full sm:w-1/2 p-6">
+                <object data="undraw_group_hangout_re_4t8r.svg" type="image/svg+xml"></object>
+            </div>
+        </div>
+        <div class="flex flex-wrap flex-col-reverse sm:flex-row">
+          <div class="w-full sm:w-1/2 pr-6 mt-6">
+            <object data="undraw_proud_coder_re_exuy.svg" type="image/svg+xml"></object>
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-6">
+            <div class="align-middle">
+              <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                Discover New Skills
+              </h3>
+              <p class="text-gray-600 mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                <br />
+                <br />
+                Images from:
+
+                <a class="text-pink-500 underline" href="https://undraw.co/">undraw.co</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--FOOTER-->
+    <section>
+        <div class="w-full bg-black container mx-auto">
+            <footer class="px-4 grid grid-cols-8 py-2"> 
+                <div class="col-span-1">
+                </div>
+                <div class="px-4 pb-12 col-start-2 col-span-3 justify-start">
+                    <h3 class="py-4 pt-12 font-bold text-4xl uppercase" style="font-family: 'Hubballi', cursive;">Connect With Us</h3>
+                    <span>
+                        <a class="fa fa-instagram" style="font-size:1.6rem" href="https://www.instagram.com/ysbcottawa/?hl=en"></a>
+                        <a class="pl-2 fa fa-linkedin" style="font-size:1.6rem"></a>
+                        <a class="pl-2 fa fa-youtube" style="font-size:1.6rem" href="https://www.youtube.com/channel/UC2R1CdMZmeOrOIabRjGdb1A"></a>
+                    </span>
+                </div>
+                <div class="col-span-1 grid grid-rows-4 py-4 pt-12 font-bold text-lg" style="font-family: 'Hubballi', cursive;">
+                    <a href="#" class="row-span-1 text-gray-500">Home</a>
+                    <a href="about-us.html" class="row-span-1">About Us</a>
+                    <a href="our-events.html">Our Events</a>
+                    <a href="our-partners.html">Our Partners</a>
+                </div>
+                <div class="col-span-2 grid grid-rows-3 py-4 pt-12 font-bold text-lg" style="font-family:'Quicksand',sans-serif;">
+                  <a class="row-span-1 text-2xl">Join our Email List</a>
+                  <div class="row-span-1">
+                    <input class="text-sm w-1/2 rounded-md text-black p-1 focus:outline-none" type="email" placeholder="you@email.com" id="email">
+                    <button id="abcde" class="w-2/5 bg-green-400 transition transform hover:scale-105 p-1 text-sm rounded-md">Join</button>
+                  </div>
+                </div>
+            </footer>
+        </div>
+    </section>
+    
+    <!-- jQuery if you need it
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  -->
+    <script>
+      var scrollpos = window.scrollY;
+      var header = document.getElementById("header");
+      var navcontent = document.getElementById("nav-content");
+      var navaction = document.getElementById("navAction");
+      var brandname = document.getElementById("brandname");
+      var toToggle = document.querySelectorAll(".toggleColour");
+
+      document.addEventListener("scroll", function () {
+        /*Apply classes for slide in bar*/
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+          header.classList.add("bg-white");
+          navaction.classList.remove("bg-white");
+          navaction.classList.add("gradient");
+          navaction.classList.remove("text-gray-800");
+          navaction.classList.add("text-white");
+          //Use to switch toggleColour colours
+          for (var i = 0; i < toToggle.length; i++) {
+            toToggle[i].classList.add("text-gray-800");
+            toToggle[i].classList.remove("text-white");
+          }
+          header.classList.add("shadow");
+          navcontent.classList.remove("bg-gray-100");
+          navcontent.classList.add("bg-white");
+        } else {
+          header.classList.remove("bg-white");
+          navaction.classList.remove("gradient");
+          navaction.classList.add("bg-white");
+          navaction.classList.remove("text-white");
+          navaction.classList.add("text-gray-800");
+          //Use to switch toggleColour colours
+          for (var i = 0; i < toToggle.length; i++) {
+            toToggle[i].classList.add("text-white");
+            toToggle[i].classList.remove("text-gray-800");
+          }
+
+          header.classList.remove("shadow");
+          navcontent.classList.remove("bg-white");
+          navcontent.classList.add("bg-gray-100");
+        }
+      });
+    </script>
+    <script>
+      /*Toggle dropdown list*/
+      /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+      var navMenuDiv = document.getElementById("nav-content");
+      var navMenu = document.getElementById("nav-toggle");
+
+      document.onclick = check;
+      function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, navMenu)) {
+            // click on the link
+            if (navMenuDiv.classList.contains("hidden")) {
+              navMenuDiv.classList.remove("hidden");
+            } else {
+              navMenuDiv.classList.add("hidden");
+            }
+          } else {
+            // click both outside link and outside menu, hide menu
+            navMenuDiv.classList.add("hidden");
+          }
+        }
+      }
+      function checkParent(t, elm) {
+        while (t.parentNode) {
+          if (t == elm) {
+            return true;
+          }
+          t = t.parentNode;
+        }
+        return false;
+      }
+    </script>
+    <script>
+      /*onscroll*/
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    </script>
+  </body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: 'AIzaSyBKQ3vERVezCVWwVhLeRDg_KOUdZLtJKao',
+      authDomain: "ysbc-test.firebaseapp.com",
+      databaseURL: "https://ysbc-test-default-rtdb.firebaseio.com",
+      projectId: "ysbc-test",
+      storageBucket: "ysbc-test.appspot.com",
+      messagingSenderId: "570235010538",
+      appId: '1:570235010538:web:d06b99210ce9c11bd00693',
+      measurementId: "G-KWW7BF0CBN"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    import {getDatabase, set, ref, child, update, remove, get} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
+
+    const db = getDatabase(app);
+  
+    var emailValue = document.getElementById("email")
+    var emailButton = document.getElementById("abcde")
+    emailButton.addEventListener('click',writeData)
+    //Write email in database
+    function writeData(){
+      emailButton.disabled = true
+      var inputEmail = emailValue.value;
+      console.log(inputEmail)
+      var userId = Math.round(new Date().getTime())
+      set(ref(db,"users/"+userId),{
+        emailAddress: inputEmail
+      })
+    }
+  </script>
+</html>
